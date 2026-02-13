@@ -202,11 +202,29 @@
         /* Section 02: About */
         .mission-text { font-size: 1.2rem; font-weight: 300; margin: 0; color: var(--text-muted); text-align: center; line-height: 1.8; }
 
-        /* Section 04: Skills & Tools */
-        .skill-item { margin-bottom: 20px; }
-        .skill-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 600; font-size: 0.95rem; }
-        .progress-bar { width: 100%; height: 8px; background: var(--border-color); border-radius: 10px; overflow: hidden; }
-        .progress { height: 100%; background: var(--primary); border-radius: 10px; box-shadow: 0 0 10px var(--primary-glow); transition: width 1.5s ease-in-out; }
+        /* Section 04: Skills & Tools - UPDATED */
+        .skill-item {
+            background: var(--input-bg);
+            border: 1px solid var(--border-color);
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .skill-item:hover {
+            border-color: var(--primary);
+            transform: translateX(5px);
+            background: var(--tag-bg);
+        }
+        .skill-item i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
 
         .tools-grid { display: flex; flex-wrap: wrap; gap: 15px; }
         .tool-card {
@@ -231,8 +249,7 @@
 
         /* Section 07: Projects */
         .project-card { padding: 0; overflow: hidden; }
-        .project-img { width: 100%; height: 300px; object-fit: cover; border-bottom: 1px solid var(--border-color); }
-        .project-content { padding: 30px; }
+        .project-content { padding: 40px; }
         .results-box { background: var(--tag-bg); border-left: 3px solid var(--primary); padding: 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9rem; }
         
         .tag { display: inline-block; background: var(--tag-bg); color: var(--primary); padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; margin: 5px 5px 0 0; border: 1px solid rgba(14, 165, 233, 0.2); }
@@ -305,7 +322,7 @@
                 <a href="#about">About</a>
                 <a href="#education">Education</a>
                 <a href="#skills">Skills</a>
-                <a href="#experience">Experience</a>
+                <a href="#experience">Training</a>
                 <a href="#services">Services</a>
                 <a href="#projects">Projects</a>
                 <a href="#achievements">Achievements</a>
@@ -347,8 +364,8 @@
             <div class="box-style">
                 <div class="timeline">
                     <div class="timeline-item">
-                        <span class="timeline-date">Expected 2027</span>
-                        <h4>Bachelor's in Cybersecurity</h4>
+                        <span class="timeline-date"> 2027</span>
+                        <h4>Computer Science  (Cybersecurity)</h4>
                         <p style="color: var(--text-muted); margin: 0;">Alexandria National University. Specialized focus on cryptography, ethical hacking, and advanced network security protocols.</p>
                     </div>
                 </div>
@@ -362,20 +379,16 @@
                 <div class="box-style">
                     <h3 style="color: var(--primary); margin-top: 0; margin-bottom: 30px;"><i class="fas fa-laptop-code"></i> Core Expertise</h3>
                     <div class="skill-item">
-                        <div class="skill-info"><span>Penetration Testing</span><span>90%</span></div>
-                        <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+                        <i class="fas fa-check-circle"></i> Penetration Testing
                     </div>
                     <div class="skill-item">
-                        <div class="skill-info"><span>Network Security & Analysis</span><span>85%</span></div>
-                        <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                        <i class="fas fa-check-circle"></i> Network Security & Analysis
                     </div>
                     <div class="skill-item">
-                        <div class="skill-info"><span>Vulnerability Assessment</span><span>80%</span></div>
-                        <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+                        <i class="fas fa-check-circle"></i> Vulnerability Assessment
                     </div>
                     <div class="skill-item">
-                        <div class="skill-info"><span>Python Scripting</span><span>75%</span></div>
-                        <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
+                        <i class="fas fa-check-circle"></i> Python Scripting
                     </div>
                 </div>
 
@@ -398,7 +411,7 @@
         </section>
 
         <section id="experience" class="reveal" style="margin-top: 100px;">
-            <h2 class="section-title">Work Experience</h2>
+            <h2 class="section-title">Training</h2>
             <div class="box-style">
                 <div class="timeline">
                     <div class="timeline-item">
@@ -440,7 +453,6 @@
             <h2 class="section-title">Projects</h2>
             <div class="grid-2">
                 <div class="box-style project-card">
-                    <img src="./media/crypto.png" alt="Cryptography Tool" class="project-img">
                     <div class="project-content">
                         <h3>Advanced Cryptography Suite</h3>
                         <p style="color: var(--text-muted);">Developed a Python-based security tool implementing encryption algorithms (S-DES, Vigenère, Playfair).</p>
@@ -455,7 +467,64 @@
                             <span class="tag">Cryptography</span>
                             <span class="tag">Algorithms</span>
                         </div>
-                        <a href="https://github.com/0AhmedYasser0/Crypto-program-.git" class="btn-outline" style="padding: 10px 20px; font-size: 0.9rem;"><i class="fab fa-github"></i> View Case Study</a>
+                        <a href="https://github.com/0AhmedYasser0/Crypto-program-.git" target="_blank" class="btn-outline" style="padding: 10px 20px; font-size: 0.9rem;"><i class="fab fa-github"></i> View Project</a>
+                    </div>
+                </div>
+
+                <div class="box-style project-card">
+                    <div class="project-content">
+                        <h3>Web Penetration Testing</h3>
+                        <p style="color: var(--text-muted);">Conducted a comprehensive penetration test on the OWASP Juice Shop to identify and remediate web vulnerabilities.</p>
+                        
+                        <div class="results-box">
+                            <strong><i class="fas fa-bug" style="color: var(--primary);"></i> Measurable Impact:</strong><br>
+                            Successfully exploited and documented critical flaws, including administrative path bypass, brute-force vulnerabilities, and Cross-Site Scripting (XSS).
+                        </div>
+
+                        <div style="margin-bottom: 20px;">
+                            <span class="tag">OWASP</span>
+                            <span class="tag">XSS</span>
+                            <span class="tag">Web Security</span>
+                        </div>
+                        <a href="https://github.com/0AhmedYasser0/Web-Penetration-Testing-.git" target="_blank" class="btn-outline" style="padding: 10px 20px; font-size: 0.9rem;"><i class="fab fa-github"></i> View Project</a>
+                    </div>
+                </div>
+
+                <div class="box-style project-card">
+                    <div class="project-content">
+                        <h3>JWT Authentication Hardening</h3>
+                        <p style="color: var(--text-muted);">Secured a vulnerable Node.js/Express JWT implementation by applying secure authentication best practices.</p>
+                        
+                        <div class="results-box">
+                            <strong><i class="fas fa-shield-alt" style="color: var(--primary);"></i> Measurable Impact:</strong><br>
+                            Mitigated <code>alg: none</code> attacks, implemented secure environment variables, and resolved insecure token storage and expiration issues.
+                        </div>
+
+                        <div style="margin-bottom: 20px;">
+                            <span class="tag">Node.js</span>
+                            <span class="tag">JWT</span>
+                            <span class="tag">AppSec</span>
+                        </div>
+                        <a href="https://github.com/0AhmedYasser0/JWT-Hardenning.git" target="_blank" class="btn-outline" style="padding: 10px 20px; font-size: 0.9rem;"><i class="fab fa-github"></i> View Project</a>
+                    </div>
+                </div>
+
+                <div class="box-style project-card">
+                    <div class="project-content">
+                        <h3>SQL Injection Defense</h3>
+                        <p style="color: var(--text-muted);">Designed and implemented robust defenses against SQL Injection attacks to ensure secure database interactions.</p>
+                        
+                        <div class="results-box">
+                            <strong><i class="fas fa-database" style="color: var(--primary);"></i> Measurable Impact:</strong><br>
+                            Hardened database queries and input validation mechanisms to prevent malicious SQL execution and unauthorized data access.
+                        </div>
+
+                        <div style="margin-bottom: 20px;">
+                            <span class="tag">SQLi</span>
+                            <span class="tag">Secure Coding</span>
+                            <span class="tag">Database Security</span>
+                        </div>
+                        <a href="https://github.com/0AhmedYasser0/SQL-Injection-Hardening-.git" target="_blank" class="btn-outline" style="padding: 10px 20px; font-size: 0.9rem;"><i class="fab fa-github"></i> View Project</a>
                     </div>
                 </div>
             </div>
@@ -478,6 +547,22 @@
                         <h3>Certified Network Security Practitioner (CNSP)</h3>
                         <p>The SecOps Group | Issued Nov 2025</p>
                         <a href="https://candidate.speedexam.net/certificate.aspx?SSTATE=am4131EniU8ntjp4bO5mXf6nUiWDMoMQTv6ogLUT7xnF/iFh2NaHmsVOTd12cxzQm7ZMXx8iEj+VYlah/tHhxq5ekBA92kZsD4etvEfuzIM=" target="_blank" class="cert-link">Show credential <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="box-style cert-card">
+                    <div class="cert-icon"><i class="fas fa-user-shield"></i></div>
+                    <div class="cert-info">
+                        <h3>Certified Blue Team Practitioner (CBTP)</h3>
+                        <p>The SecOps Group | Issued Mar 2026</p>
+                        <a href="https://candidate.speedexam.net/certificate.aspx?SSTATE=am4131EniU8ntjp4bO5mXZpAUs/B+sGFRZ4si5J8OEU8m4OJ54KRbCX3WfhWHcV3e0SWBMxyVvGA0Fz0iuHNKX3qGhSsUQE2G2RlbgTvJ2g=" target="_blank" class="cert-link">Show credential <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="box-style cert-card">
+                    <div class="cert-icon"><i class="fas fa-id-badge"></i></div>
+                    <div class="cert-info">
+                        <h3>Certified Social Engineering Defense Practitioner (CSEDP)</h3>
+                        <p>The SecOps Group | Issued Feb 2026</p>
+                        <a href="https://candidate.speedexam.net/certificate.aspx?SSTATE=am4131EniU8ntjp4bO5mXdIRifjAS8VdiN7S4p/m+KbxePfYpJKUI71FuyETK/Fd7Exydz6kd+VJ3o1CgwjpPTTnqzNt966+Y/Mx6kTONA0=" target="_blank" class="cert-link">Show credential <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
             </div>
