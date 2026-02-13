@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Yasser | Cybersecurity Professional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+        /* Dark Mode Variables (Default) */
+        :root {
+            --bg-dark: #070b14;
+            --bg-card: #111827;
+            --primary: #0ea5e9;
+            --primary-glow: rgba(14, 165, 233, 0.4);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --glass-bg: rgba(17, 24, 39, 0.7);
+            --border-color: rgba(255, 255, 255, 0.05);
+            --quote-color: rgba(255, 255, 255, 0.05);
+            --nav-bg: rgba(17, 24, 39, 0.9);
+            --tag-bg: rgba(14, 165, 233, 0.1);
+            --input-bg: rgba(255, 255, 255, 0.03);
+        }
+
+        /* Light Mode Variables */
+        :root.light-mode {
+            --bg-dark: #f0f4f8;
+            --bg-card: #ffffff;
+            --primary: #0284c7; 
+            --primary-glow: rgba(2, 132, 199, 0.2);
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --border-color: rgba(0, 0, 0, 0.1);
+            --quote-color: rgba(0, 0, 0, 0.05);
+            --nav-bg: rgba(255, 255, 255, 0.95);
+            --tag-bg: rgba(2, 132, 199, 0.1);
+            --input-bg: #f8fafc;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.7;
+            overflow-x: hidden;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        /* Modern Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--nav-bg);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.4s ease;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+
+        .theme-toggle:hover { color: var(--primary); }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Section 01: Hero / Cover Section */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 120px 20px 20px;
+            background: radial-gradient(circle at center, var(--bg-card) 0%, var(--bg-dark) 100%);
+            position: relative;
+        }
+
+        .profile-img-container {
+            width: 250px;  
+            height: 250px; 
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            padding: 6px;
+            box-shadow: 0 0 25px var(--primary-glow);
+            margin-bottom: 30px;
+        }
+
+        .profile-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+
+        h1 { font-size: 4rem; font-weight: 800; margin: 0 0 10px; letter-spacing: -1px; }
+        h1 span { color: var(--primary); }
+
+        .typewriter { font-size: 1.5rem; color: var(--primary); font-weight: 400; height: 35px; margin-bottom: 30px; }
+
+        .hero-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+
+        .btn-main {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff !important;
+            padding: 14px 35px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px var(--primary-glow);
+            border: 2px solid var(--primary);
+            cursor: pointer;
+        }
+
+        .btn-main:hover { transform: translateY(-3px); background: #0284c7; border-color: #0284c7; }
+
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            color: var(--text-main) !important;
+            padding: 14px 35px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+        }
+
+        .btn-outline:hover { background: var(--tag-bg); transform: translateY(-3px); }
+
+        /* Layout Container */
+        .container { max-width: 1100px; margin: 0 auto; padding: 80px 20px; }
+
+        .section-title { font-size: 2.5rem; margin-bottom: 50px; text-align: center; position: relative; }
+        .section-title::after { content: ''; position: absolute; width: 60px; height: 4px; background: var(--primary); bottom: -15px; left: 50%; transform: translateX(-50%); border-radius: 2px; }
+
+        /* Grid System */
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+        /* General Box/Card Styles */
+        .box-style {
+            background: var(--glass-bg);
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .box-style:hover { border-color: var(--primary); }
+
+        /* Section 02: About */
+        .mission-text { font-size: 1.2rem; font-weight: 300; margin: 0; color: var(--text-muted); text-align: center; line-height: 1.8; }
+
+        /* Section 04: Skills & Tools */
+        .skill-item { margin-bottom: 20px; }
+        .skill-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 600; font-size: 0.95rem; }
+        .progress-bar { width: 100%; height: 8px; background: var(--border-color); border-radius: 10px; overflow: hidden; }
+        .progress { height: 100%; background: var(--primary); border-radius: 10px; box-shadow: 0 0 10px var(--primary-glow); transition: width 1.5s ease-in-out; }
+
+        .tools-grid { display: flex; flex-wrap: wrap; gap: 15px; }
+        .tool-card {
+            background: var(--tag-bg); color: var(--text-main); padding: 12px 20px; border-radius: 10px; font-size: 0.95rem; font-weight: 600;
+            display: flex; align-items: center; gap: 10px; border: 1px solid rgba(14, 165, 233, 0.2); transition: all 0.3s ease; cursor: default;
+        }
+        .tool-card i { color: var(--primary); font-size: 1.2rem; transition: color 0.3s ease; }
+        .tool-card:hover { transform: translateY(-3px); background: var(--primary); color: #fff; box-shadow: 0 5px 15px var(--primary-glow); }
+        .tool-card:hover i { color: #fff; }
+
+        /* Timeline for Education & Experience */
+        .timeline { border-left: 2px solid var(--primary); padding-left: 25px; margin-left: 10px; }
+        .timeline-item { position: relative; margin-bottom: 40px; }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-item::before { content: ''; position: absolute; left: -34px; top: 5px; width: 16px; height: 16px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 10px var(--primary-glow); }
+        .timeline-date { color: var(--primary); font-size: 0.9rem; font-weight: 600; letter-spacing: 1px; margin-bottom: 5px; display: block; }
+        .timeline-item h4 { margin: 0 0 10px 0; font-size: 1.2rem; }
+
+        /* Services Cards */
+        .service-card { text-align: center; }
+        .service-card i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
+
+        /* Section 07: Projects */
+        .project-card { padding: 0; overflow: hidden; }
+        .project-img { width: 100%; height: 300px; object-fit: cover; border-bottom: 1px solid var(--border-color); }
+        .project-content { padding: 30px; }
+        .results-box { background: var(--tag-bg); border-left: 3px solid var(--primary); padding: 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9rem; }
+        
+        .tag { display: inline-block; background: var(--tag-bg); color: var(--primary); padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; margin: 5px 5px 0 0; border: 1px solid rgba(14, 165, 233, 0.2); }
+
+        /* Section 08: Achievements */
+        .cert-card { display: flex; align-items: flex-start; gap: 20px; padding: 25px; }
+        .cert-icon { font-size: 2.5rem; color: var(--primary); background: var(--tag-bg); padding: 15px; border-radius: 12px; flex-shrink: 0; }
+        .cert-info h3 { margin: 0 0 5px 0; font-size: 1.1rem; }
+        .cert-info p { margin: 0 0 10px 0; color: var(--text-muted); font-size: 0.9rem; }
+        .cert-link { display: inline-flex; align-items: center; gap: 8px; color: var(--primary); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: opacity 0.3s; }
+        .cert-link:hover { opacity: 0.8; text-decoration: underline; }
+
+        /* Section 09: Testimonials */
+        .testimonial-author { display: flex; align-items: center; margin-top: 25px; border-top: 1px solid var(--border-color); padding-top: 20px; }
+        .testimonial-img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary); margin-right: 15px; }
+        .author-info h4 { color: var(--primary); margin: 0 0 5px 0; font-size: 1.1rem; }
+        .author-info span { color: var(--text-muted); font-size: 0.9rem; }
+
+        /* Section 10: Contact */
+        .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+        .contact-info-item { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; color: var(--text-muted); font-size: 1.1rem; }
+        .contact-info-item i { font-size: 1.5rem; color: var(--primary); background: var(--tag-bg); padding: 15px; border-radius: 50%; width: 55px; height: 55px; display: flex; justify-content: center; align-items: center;}
+        
+        .social-icons a { color: var(--text-muted); font-size: 1.8rem; margin-right: 20px; transition: color 0.3s; }
+        .social-icons a:hover { color: var(--primary); }
+
+        /* Form Styles */
+        .contact-form { display: flex; flex-direction: column; gap: 20px; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 15px; border-radius: 10px; border: 1px solid var(--border-color);
+            background: var(--input-bg); color: var(--text-main); font-family: 'Outfit', sans-serif; font-size: 1rem; transition: border-color 0.3s;
+        }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); }
+        .form-group textarea { resize: vertical; min-height: 150px; }
+
+        /* Animations */
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--border-color); margin-top: 50px; }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .nav-content { justify-content: space-between; }
+            .menu-btn { display: block; }
+            .nav-links {
+                display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--nav-bg);
+                flex-direction: column; padding: 20px 0; border-bottom: 1px solid var(--border-color); backdrop-filter: blur(12px);
+            }
+            .nav-links.active { display: flex; }
+            .nav-links a { margin: 12px 0; font-size: 1.1rem; }
+            
+            h1 { font-size: 2.8rem; }
+            .profile-img-container { width: 200px; height: 200px; }
+            .hero-buttons { flex-direction: column; width: 100%; max-width: 300px; }
+            
+            .contact-wrapper { grid-template-columns: 1fr; }
+            .cert-card { flex-direction: column; align-items: center; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-content">
+            <button class="menu-btn" id="menu-btn"><i class="fas fa-bars"></i></button>
+            
+            <div class="nav-links" id="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#testimonials">Feedback</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" title="Toggle Light/Dark Mode">
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home">
+        <div class="profile-img-container">
+            <img src="./media/profile.jpg" alt="Ahmed Yasser" class="profile-img">
+        </div>
+        <h1>Ahmed <span>Yasser</span></h1>
+        <div class="typewriter" id="typewriter"></div>
+        <div class="hero-buttons">
+            <a href="#projects" class="btn-main"><i class="fas fa-eye" style="margin-right: 8px;"></i> Explore My Work</a>
+            <a href="./media/Ahmed_Yasser_CV.pdf" download class="btn-outline"><i class="fas fa-file-download" style="margin-right: 8px;"></i> CV</a>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <section id="about" class="reveal">
+            <div class="box-style">
+                <h3 style="color: var(--primary); text-align: center; font-size: 1.8rem; margin-top: 0;"><i class="fas fa-crosshairs"></i> Value Proposition</h3>
+                <p class="mission-text">"I help organizations secure their digital assets and mitigate cyber threats through comprehensive penetration testing and robust network defense strategies."</p>
+            </div>
+        </section>
+
+        <section id="education" class="reveal" style="margin-top: 100px;">
+            <h2 class="section-title">Education</h2>
+            <div class="box-style">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-date">Expected 2027</span>
+                        <h4>Bachelor's in Cybersecurity</h4>
+                        <p style="color: var(--text-muted); margin: 0;">Alexandria National University. Specialized focus on cryptography, ethical hacking, and advanced network security protocols.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="reveal" style="margin-top: 100px;">
+            <h2 class="section-title">Skills & Tools</h2>
+            <div class="grid-2">
+                
+                <div class="box-style">
+                    <h3 style="color: var(--primary); margin-top: 0; margin-bottom: 30px;"><i class="fas fa-laptop-code"></i> Core Expertise</h3>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Penetration Testing</span><span>90%</span></div>
+                        <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Network Security & Analysis</span><span>85%</span></div>
+                        <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Vulnerability Assessment</span><span>80%</span></div>
+                        <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Python Scripting</span><span>75%</span></div>
+                        <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
+                    </div>
+                </div>
+
+                <div class="box-style">
+                    <h3 style="color: var(--primary); margin-top: 0; margin-bottom: 30px;"><i class="fas fa-toolbox"></i> Technical Tools</h3>
+                    <div class="tools-grid">
+                        <div class="tool-card"><i class="fas fa-search"></i> Nmap</div>
+                        <div class="tool-card"><i class="fas fa-bug"></i> Burp Suite</div>
+                        <div class="tool-card"><i class="fas fa-network-wired"></i> Wireshark</div>
+                        <div class="tool-card"><i class="fas fa-shield-alt"></i> Metasploit</div>
+                        <div class="tool-card"><i class="fab fa-linux"></i> Kali Linux</div>
+                        <div class="tool-card"><i class="fab fa-python"></i> Python</div>
+                        <div class="tool-card"><i class="fas fa-project-diagram"></i> Packet Tracer</div>
+                        <div class="tool-card"><i class="fas fa-database"></i> SQLmap</div>
+                        <div class="tool-card"><i class="fas fa-server"></i> Active Directory</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="experience" class="reveal" style="margin-top: 100px;">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="box-style">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-date">Nov 2024 - Present</span>
+                        <h4>Penetration Tester Trainee</h4>
+                        <p style="color: var(--text-muted); margin: 0;">Digital Egypt Pioneers Initiative (DEPI). Executed complex security audits, simulated real-world cyber attacks, and documented vulnerabilities in detailed technical reports.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">Jul 2025 - Aug 2025</span>
+                        <h4>Network Security Intern</h4>
+                        <p style="color: var(--text-muted); margin: 0;">National Telecommunication Institute (NTI). Managed firewall configurations, monitored network traffic, and conducted deep packet analysis using Wireshark.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="reveal" style="margin-top: 100px;">
+            <h2 class="section-title">Offered Services</h2>
+            <div class="grid-3">
+                <div class="box-style service-card">
+                    <i class="fas fa-user-secret"></i>
+                    <h3>Penetration Testing</h3>
+                    <p style="color: var(--text-muted);">Simulating real-world attacks to identify and patch vulnerabilities before malicious actors exploit them.</p>
+                </div>
+                <div class="box-style service-card">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Network Defense</h3>
+                    <p style="color: var(--text-muted);">Designing resilient architectures, configuring firewalls, and implementing advanced IDS/IPS solutions.</p>
+                </div>
+                <div class="box-style service-card">
+                    <i class="fas fa-shield-virus"></i>
+                    <h3>Vulnerability Assessment</h3>
+                    <p style="color: var(--text-muted);">Conducting deep packet analysis and comprehensive security audits to ensure organizational safety.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="reveal" style="margin-top: 100px;">
+            <h2 class="section-title">Projects</h2>
+            <div class="grid-2">
+                <div class="box-style project-card">
+                    <img src="./media/crypto.png" alt="Cryptography Tool" class="project-img">
+                    <div class="project-content">
+                        <h3>Advanced Cryptography Suite</h3>
+                        <p style="color: var(--text-muted);">Developed a Python-based security tool implementing encryption algorithms (S-DES, Vigenère, Playfair).</p>
+                        
+                        <div class="results-box">
+                            <strong><i class="fas fa-chart-line" style="color: var(--primary);"></i> Measurable Impact:</strong><br>
+                            Achieved 100% data encryption accuracy without leakage, improving secure text transmission reliability.
+                        </div>
+
+                        <div style="margin-bottom: 20px;">
+                            <span class="tag">Python</span>
+                            <span class="tag">Cryptography</span>
+                            <span class="tag">Algorithms</span>
+                        </div>
+                        <a href="#" class="btn-outline" style="padding: 10px 20px; font-size: 0.9rem;"><i class="fab fa-github"></i> View Case Study</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="reveal" style="margin-top: 100px;">
+            <h2 class="section-title">Achievements & Licenses</h2>
+            <div class="grid-2">
+                <div class="box-style cert-card">
+                    <div class="cert-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="cert-info">
+                        <h3>Certified Red Team Operations Management (CRTOM)</h3>
+                        <p>Red Team Leaders | Issued Jan 2026</p>
+                        <a href="https://courses.redteamleaders.com/exam-completion/701ab67fc2c568b3" target="_blank" class="cert-link">Show credential <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="box-style cert-card">
+                    <div class="cert-icon"><i class="fas fa-network-wired"></i></div>
+                    <div class="cert-info">
+                        <h3>Certified Network Security Practitioner (CNSP)</h3>
+                        <p>The SecOps Group | Issued Nov 2025</p>
+                        <a href="#" target="_blank" class="cert-link">Show credential <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="reveal" style="margin-top: 100px;">
+            <h2 class="section-title">Client & Mentor Feedback</h2>
+            <div class="grid-2">
+                <div class="box-style" style="position: relative;">
+                    <i class="fas fa-quote-right" style="position: absolute; right: 30px; top: 30px; font-size: 3rem; color: var(--quote-color);"></i>
+                    <p style="font-size: 1.1rem; font-style: italic; color: var(--text-muted);">"Ahmed demonstrated exceptional analytical skills during the penetration testing simulations. His ability to identify vulnerabilities and document them professionally is highly commendable."</p>
+                    <div class="testimonial-author">
+                        <img src="./media/depi.png" alt="Technical Mentor" class="testimonial-img">
+                        <div class="author-info"><h4>Technical Mentor</h4><span>DEPI Initiative</span></div>
+                    </div>
+                </div>
+                <div class="box-style" style="position: relative;">
+                    <i class="fas fa-quote-right" style="position: absolute; right: 30px; top: 30px; font-size: 3rem; color: var(--quote-color);"></i>
+                    <p style="font-size: 1.1rem; font-style: italic; color: var(--text-muted);">"A dedicated professional with a sharp eye for network anomalies. His work on firewall configurations and deep packet analysis during the internship was top-tier."</p>
+                    <div class="testimonial-author">
+                        <img src="./media/nti.png" alt="Security Supervisor" class="testimonial-img">
+                        <div class="author-info"><h4>Security Supervisor</h4><span>National Telecommunication Institute</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="reveal" style="margin-top: 100px;">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="box-style contact-wrapper">
+                
+                <div>
+                    <h3 style="color: var(--primary); margin-top: 0; font-size: 2rem;">Let's Secure Your Network.</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 40px;">Feel free to reach out for collaboration, consulting, or job opportunities. I am always open to discussing new projects and securing digital infrastructures.</p>
+                    
+                    <div class="contact-info-item"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</div>
+                    <div class="contact-info-item"><i class="fas fa-envelope"></i> ahmedyalsabagh@gmail.com</div>
+                    <div class="contact-info-item"><i class="fas fa-phone-alt"></i> +201024010480</div>
+                    
+                    <div class="social-icons" style="margin-top: 30px;">
+                        <a href="https://github.com/0AhmedYasser0" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/ahmed-yasser-b310a42b3/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <form action="#" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Write your message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-main" style="width: 100%; border: none;"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send Message</button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Ahmed Yasser. Crafted for Security Excellence.</p>
+    </footer>
+
+    <script>
+        // Typing Effect JS
+        const words = ["Penetration Tester", "Network Defender", "CTF Player"];
+        let i = 0; let j = 0; let isDeleting = false; let typewriter = document.getElementById("typewriter");
+
+        function type() {
+            let currentWord = words[i];
+            if (isDeleting) {
+                typewriter.innerHTML = currentWord.substring(0, j - 1);
+                j--;
+            } else {
+                typewriter.innerHTML = currentWord.substring(0, j + 1);
+                j++;
+            }
+            let typeSpeed = isDeleting ? 50 : 100;
+            if (!isDeleting && j === currentWord.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && j === 0) {
+                isDeleting = false;
+                i = (i + 1) % words.length;
+                typeSpeed = 500;
+            }
+            setTimeout(type, typeSpeed);
+        }
+        type();
+
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        const menuLinks = navLinks.querySelectorAll('a');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            if(navLinks.classList.contains('active')){
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                icon.classList.replace('fa-times', 'fa-bars');
+            }
+        });
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+            });
+        });
+
+        // Theme Toggle (Light / Dark Mode)
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = themeToggleBtn.querySelector('i');
+
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.classList.add('light-mode');
+            themeIcon.classList.replace('fa-sun', 'fa-moon');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('light-mode');
+            
+            if (document.documentElement.classList.contains('light-mode')) {
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'light');
+            } else {
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>
